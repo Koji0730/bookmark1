@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
     <div class="form-container">
         <form action="insert.php" method="POST">
             <label for="name">投稿者:</label>
@@ -58,8 +57,9 @@
             <label for="comments">コメント:</label>
             <textarea id="comments" name="comments"></textarea>
 
-            <button type="submit">登録</button>
+            <button type="submit" class="register-button">登録</button>
         </form>
+        <a href="select.php" class="button ichiran-button">一覧表示</a> <!-- 「一覧表示」ボタンを追加 -->
     </div>
 </body>
 </html>

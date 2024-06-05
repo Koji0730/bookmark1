@@ -67,6 +67,8 @@ $values = $stmt->fetchAll(PDO::FETCH_ASSOC); //PDO::FETCH_ASSOC[カラム名の�
         <th>年代</th>
         <th>評価</th>
         <th>コメント</th>
+        <th>更新</th>
+        <th>削除</th>
       </tr>
     </thead>
     <tbody>
@@ -80,12 +82,15 @@ $values = $stmt->fetchAll(PDO::FETCH_ASSOC); //PDO::FETCH_ASSOC[カラム名の�
         <td><?= $value['age']?></td>
         <td><?= $value['rating']?></td>
         <td><?= $value['comments']?></td>
+        <td><a href="detail.php?id=<?=h($value["id"])?>">Update</a></td>
+        <td><a href="delete.php?id=<?=h($value["id"])?>">Delete</a></td>
       </tr>
       <?php endforeach; ?>
     </tbody>
   </table>
 </div>
-<!-- Main[End] -->
+
+
 
 </body>
 </html>

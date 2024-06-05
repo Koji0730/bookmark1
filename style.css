@@ -3,7 +3,6 @@ body {
     background-image: url('./書斎.webp'); 
     background-size: cover;
     background-position: center;
-
     margin: 0;
     padding: 20px;
     position: relative;
@@ -70,21 +69,40 @@ textarea {
     border-radius: 4px;
 }
 
-textarea{
+textarea {
     resize: none;
     height: 80px;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
+button, .button {
+    size: 10px;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px; /* ボタン間の間隔を調整 */
+    width: calc(100% - 40px); /* ボタンの幅を調整 */
+    margin: 10px auto; /* 中央揃え */
 }
 
-button:hover {
-    background-color: #45a049;
+.register-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.register-button:hover {
+    background-color: #366a39;
+}
+
+.ichiran-button {
+    background-color: #2196F3;
+    color: white;
+}
+
+.ichiran-button:hover {
+    background-color: #0b7dda;
 }

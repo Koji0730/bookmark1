@@ -25,6 +25,7 @@ if ($values === false) {
     exit("FETCH_ERROR: Data could not be retrieved.");
 }
 
+// JSONエンコード
 $json = json_encode($values, JSON_UNESCAPED_UNICODE);
 if ($json === false) {
     exit("JSON_ERROR: " . json_last_error_msg());
@@ -95,6 +96,10 @@ if ($json === false) {
   console.log('Genres:', genres); // デバッグ用: ジャンルごとのデータを表示
   console.log('Averages:', averages); // デバッグ用: 平均評価を表示
 
+  // 最高評価を取得
+  const maxAverage = Math.max(...averages);
+  const maxIndex = averages.indexOf(maxAverage);
+
   // ジャンルごとの固定色リスト
   const colors = {
     'fiction': '#FF9999',
@@ -114,7 +119,7 @@ if ($json === false) {
       datasets: [{
         label: '平均評価',
         data: averages,
-        backgroundColor: labels.map(label => colors[label])
+        backgroundColor: labels.map((label, index) => index === maxIndex ? '#FFD700' : colors[label])
       }]
     },
     options: {
@@ -142,7 +147,8 @@ if ($json === false) {
         tooltip: {
           callbacks: {
             label: function(tooltipItem) {
-              return `平均評価: ${tooltipItem.raw.toFixed(2)}`;
+              const isMax = tooltipItem.dataIndex === maxIndex;
+              return `平均評価: ${tooltipItem.raw.toFixed(2)}${isMax ? ' ☆' : ''}`;
             }
           }
         }
