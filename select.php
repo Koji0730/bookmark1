@@ -8,7 +8,7 @@ $pdo = db_conn();
 
 //２．データ登録SQL作成
 $sql = "SELECT * FROM bookmark_an_table";
-$stmt = $pdo->prepare("$sql");
+$stmt = $pdo->prepare($sql);
 $status = $stmt->execute();
 
 //３．データ表示

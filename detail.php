@@ -63,7 +63,7 @@ $v =  $stmt->fetch(); //PDO::FETCH_ASSOC[カラム名のみで取得できるモ
             <label for="rating">本の評価:</label>
             <div class="star-rating-container">
                 <div class="star-rating">
-                    <?php for ($i = 10; $i >= 1; $i--): ?>
+                    <?php for ($i = 1; $i <= 10; $i++): ?>
                         <input type="radio" id="star<?=$i?>" name="rating" value="<?=$i?>" <?=$v["rating"] == $i ? "checked" : ""?>><label for="star<?=$i?>">★</label>
                     <?php endfor; ?>
                 </div>
